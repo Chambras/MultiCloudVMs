@@ -143,7 +143,7 @@ resource "azurerm_virtual_machine" "web-server" {
     disable_password_authentication = true
     ssh_keys {
       path     = "/home/multicloud/.ssh/authorized_keys"
-      key_data = "SSH KEY TO USE"
+      key_data = "<<SSH KEY TO USE>>"
     }
   }
   tags = "${var.tags}"
