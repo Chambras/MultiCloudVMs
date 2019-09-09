@@ -16,25 +16,6 @@ variable "vnetName" {
     description = "VNet Name."
 }
 
-variable "saKind" {
-  type ="string"
-  default = "StorageV2"
-  description = "Defines the Kind of account. Valid options are Storage, StorageV2 and BlobStorage."
-}
-
-variable "saTier" {
-  type = "string"
-  default = "Standard"
-  description = "Defines the Tier to use for this storage account. Valid options are Standard and Premium."
-}
-
-variable "saReplicationType" {
-  type = "string"
-  default = "GRS"
-  description = "Defines the type of replication to use for this storage account. Valid options are LRS, GRS, RAGRS and ZRS."
-}
-
-
 variable "tags" {
   type = "map"
   default = {
@@ -46,4 +27,58 @@ variable "tags" {
 
 variable "prefix" {
   default = "dev"
+}
+
+variable "suffix" {
+  default = "demo"
+}
+
+## compute variables
+variable "winVMName" {
+  type = "string"
+  default = "WinServer"
+  description = "Default Windows VM server name."
+}
+
+variable "linuxVMName" {
+  type = "string"
+  default = "MainLinuxServer"
+  description = "Default Linux VM server name."
+}
+
+variable "vmSize" {
+  type = "string"
+  default = "Standard_DS2_v2"
+  description = "Default VM size."
+}
+
+variable "publicIPName" {
+  type = "string"
+  default = "PublicIP"
+  description = "Default Public IP name."
+}
+
+variable "publicIPAllocation" {
+  type = "string"
+  default = "Static"
+  description = "Default Public IP allocation. Could be Static or Dynamic."
+}
+
+variable "networkInterfaceName" {
+  type = "string"
+  default = "NIC"
+  description = "Default Windows Network Interface Name."
+}
+
+## Security variables
+variable "sgName" {
+  type = "string"
+  default = "default_RDPSSH_SG"
+  description = "Default Security Group Name to be applied by default to VMs and subnets."
+}
+
+variable "sourceIPs" {
+  type = "list"
+  default = ["173.66.39.236"]
+  description = "Public IPs to allow inboud communications."
 }

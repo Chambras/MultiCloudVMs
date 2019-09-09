@@ -4,14 +4,14 @@ It creates all the networking requirements, security groups, subnets in order to
 
 ## Pre-requists
 
-It is assumed that you have Azure, AWS and GCP CLI installed and configured.
+It is assumed that you have Terraform, Azure, AWS and GCP CLI installed and configured.
 More information on this topic [here](https://docs.microsoft.com/en-us/azure/terraform/terraform-overview) for azure,
 [here](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html) for AWS and [here](https://cloud.google.com/sdk/docs/) for GCP.
 
 ### versions
 These scripts have been tested using:
-* Terraform =>0.12.2
-* Azure provider = 1.30.1
+* Terraform =>0.12.7
+* Azure provider = 1.33.1
 * AWS provider = 2.16.0
 * Google provider = 2.5.1
 
@@ -24,8 +24,12 @@ These scripts have been tested using:
 |       `-- outputs.tf
 |-- Azure
 |   `-- TestNodes
+|       |-- CentOSVM.tf
+|       |-- WindowsVM.tf
 |       |-- main.tf
+|       |-- networking.tf
 |       |-- outputs.tf
+|       |-- security.tf
 |       `-- variables.tf
 |-- GCP
 |   `-- TestNodes
